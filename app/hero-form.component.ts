@@ -12,7 +12,11 @@ export class HeroFormComponent {
   model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
   submitted = false;
   active = true;
-  onSubmit() { this.submitted = true; }
+  onSubmit(form) {
+    console.log(form);
+    this.submitted = true; 
+  }
+
   newHero() {
     this.model = new Hero(42, '', '');
     // this will force the form to be removed and recreated, restoring the 'pristine' state
